@@ -1,0 +1,22 @@
+public class Dummy {
+	
+	int a=10;
+	static double b=20;
+	
+	
+	public static void main(String[] args) {
+		Dummy obj= new Dummy();
+		System.out.println(obj.a);
+		System.out.println(obj.b);
+		obj.a =100;
+		obj.b = 200;
+		System.out.println(obj.a);
+		System.out.println(obj.b);
+		Dummy obj1= new Dummy();
+		System.out.println(obj1.a);
+		System.out.println(obj1.b);
+	}
+
+}
+// for Instance variable(non-static), every time new memory allocation is done thats why value of a is 10 in last
+//for static,only one memory allocation is done( and that will be over write) thats why value of b is over writed 
