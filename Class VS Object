@@ -1,0 +1,4 @@
+1. Class is logical intity while Object is a physical intity ( it required memory while creating it)
+2. Class is a Blue Print which decide object creation, Without class there is no object creation 
+3. By one class we can create multiple object, and multiple memory allocation will be required(ibvisuoly )
+4. Class is created by Class keyword while object is created by New Keyword
