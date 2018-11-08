@@ -1,0 +1,31 @@
+package Dryrun;
+public class Variable {
+	int a=10;
+	static int b=20;
+
+		
+	
+	public static void main(String[] args) {
+		Variable obj=new Variable();
+		System.out.println("in main method "+obj.a);	// here a variable is non-static and using in static block so using by creating Object
+		System.out.println(Variable.b);				// variable b is static and using in static area, so using by class name
+		
+	}
+
+	
+	void m1() {
+		System.out.println(a);			// here a variable is non-static and using in non- static block so using directly
+		System.out.println(Variable.b);	// variable b is static and using in non-static area, so using by class name
+	}
+	
+	static void m2() {
+		Variable obj= new Variable();
+		System.out.println(obj.a);
+		System.out.println(Variable.b);
+	}
+}
+
+// we can access static variable in 3 ways
+//	1. access by using class name
+//	2. access directly
+//	3. access using object creation
