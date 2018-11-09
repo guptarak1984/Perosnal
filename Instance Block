@@ -1,0 +1,45 @@
+package Dryrun;
+
+public class method {
+
+
+	public static void main(String[] args) {
+		new method();		// for every object creation, instance block will be executed
+		new method(10); // for every object creation, instance block will be executed
+		new method(10,5); // for every object creation, instance block will be executed
+
+	}
+
+	{
+		System.out.println("block2");
+	}
+
+	{
+		System.out.println("block");
+	}
+
+	method() {
+		System.out.println("zero arg constructor");
+	}
+
+	method(int i) {
+		System.out.println("one arg constructor");
+	}
+
+	method(int i, int j) {
+		System.out.println("two arg constructor");
+	}
+
+}
+
+/*result 
+
+block2
+block
+zero arg constructor
+block2
+block
+one arg constructor
+block2
+block
+two arg constructor*/
