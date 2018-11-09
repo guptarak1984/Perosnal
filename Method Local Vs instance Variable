@@ -46,3 +46,19 @@ public class method {
 
 
 // Inside Static method this keyword is not allowed
+
+
+//=======================================================================================
+
+package Dryrun;
+
+public class method {
+	public static void main(String[] args) {
+	System.out.println("rakesh"+"Gupta");
+	System.out.println(10+20);
+	}
+
+}
+
+
+// Operartor overloading is not allowed in Java, only + operator overloading is allowed
