@@ -1,0 +1,22 @@
+package Dryrun;
+
+public class method {
+	int x= 1000;		// instance variable
+	int y=2000;			//instance variable
+
+	public static void main(String[] args) {
+		method obj = new method();
+		obj.add(100, 200);
+	}
+
+	void add(int x,int y) {	// local variable
+
+		System.out.println(x+y);
+		System.out.println(x+y);
+		System.out.println(this.x+this.y);
+	}
+
+}
+
+
+// in case of local and instance variable having name, priority goes to local variable. to use instance use this keyword
