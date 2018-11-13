@@ -1,0 +1,7 @@
+Write each command in seperate Line
+
+
+
+G:              // This Command will switch to G directory 
+cd Torrent\how to get away      // This line will go into directory Torrent\how to get away Folder
+java -jar FbLogin.jar         // after coming to G:\Torrent\how to get away Folder this line will run the command as its manadtory to run this from specified location
