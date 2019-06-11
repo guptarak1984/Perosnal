@@ -1,0 +1,69 @@
+package Cert;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.nio.file.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;; 
+
+public class vceplusUdemyPDFToText 
+{
+
+static String data;
+public static XSSFWorkbook wb1;
+public static XSSFSheet sheet1;
+
+
+  public static void main(String[] args) throws Exception 
+  { 
+	  List<String> Option = new ArrayList<String>();
+	  
+	  
+	  File file1 =  new File("C:\\Users\\rakgu\\Downloads\\Compressed\\Deumy\\Deumy\\Test.xlsx");
+	  FileInputStream  fis1 = new FileInputStream(file1);
+	  wb1 = new XSSFWorkbook(fis1);
+	  sheet1=wb1.getSheetAt(0);
+	  
+	  for(int j=0;j<300;j++) 
+	  {
+	  sheet1.createRow(j);
+	  }
+	  
+	  
+	  data = new String(Files.readAllBytes(Paths.get("C:\\Users\\rakgu\\Downloads\\Compressed\\Deumy\\Deumy\\Test.txt")));
+	String dataSplit[]=  data.split("QUESTION [0-9]|QUESTION [0-9][0-9]|QUESTION [0-9][0-9][0-9]|Correct Answer: |Section:");
+	
+	 for(int i=0;i<300;i++) 
+	 {
+	  
+	  String RawWholeContentSplit[] = dataSplit[0].split("A\\.|B\\.|C\\.|D\\.|E\\.|F\\.");
+	  String QuesWrite = RawWholeContentSplit[0].trim();
+	  
+	  for(int m=0;m<RawWholeContentSplit.length;m++)
+	  {
+		  Option.add(RawWholeContentSplit[m]);
+	  }
+	  
+	  
+	  sheet1.getRow(i).createCell(0).setCellValue(QuesWrite); 
+	  sheet1.getRow(i).createCell(1).setCellValue(dataSplit[1].trim()); 
+	  for(int k=0;k<Option.size();k++)
+	  {
+	  sheet1.getRow(i).createCell(2+k).setCellValue(Option.get(k)); 
+	  }
+
+	  Option.clear();
+	
+	 }
+	 
+	  FileOutputStream fout=new FileOutputStream(file1);
+	  wb1.write(fout);
+	  wb1.close();
+	  
+  } 
+}
+
